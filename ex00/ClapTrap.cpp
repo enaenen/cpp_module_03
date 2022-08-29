@@ -1,16 +1,32 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap( void )
-	: name( "NoName" ), hp( defaultHP ), ep( defaultEP ), ad( defaultAD ){};
+	: name( "NoName" ), hp( defaultHP ), ep( defaultEP ), ad( defaultAD ) {
+	std::cout << "====== Called ClapTrap() Constructor======" << std::endl;
+}
+ClapTrap::ClapTrap( std::string name )
+	: name( name ), hp( defaultHP ), ep( defaultEP ), ad( defaultAD ) {
+	std::cout << "====== Called ClapTrap(name) Constructor======" << std::endl;
+}
 ClapTrap::ClapTrap( std::string name, unsigned int hp, unsigned int ep,
 					unsigned int ad )
-	: name( name ), hp( hp ), ep( ep ), ad( ad ) {}
-ClapTrap::ClapTrap( std::string name )
-	: name( name ), hp( defaultHP ), ep( defaultEP ), ad( defaultAD ){};
-ClapTrap::ClapTrap( const ClapTrap& ref ) { *this = ref; }
+	: name( name ), hp( hp ), ep( ep ), ad( ad ) {
+	std::cout << "====== Called ClapTrap(name, hp, ep ,ad) Constructor======"
+			  << std::endl;
+}
 
-ClapTrap::~ClapTrap() {}
+ClapTrap::ClapTrap( const ClapTrap& ref ) {
+	std::cout << "====== Called ClapTrap(ClapTrap& ref) Constructor======"
+			  << std::endl;
+	*this = ref;
+}
+
+ClapTrap::~ClapTrap() {
+	std::cout << "====== Called ~ClapTrap() Destructor ======" << std::endl;
+}
 ClapTrap& ClapTrap::operator=( const ClapTrap& ref ) {
+	std::cout << "====== Called Operator=() ======" << std::endl;
+
 	if ( this != &ref ) {
 		name = ref.getName();
 		hp = ref.getHitPoints();
@@ -73,4 +89,12 @@ void ClapTrap::beRepaired( unsigned int amount ) {
 	std::cout << name << " : " << hp - prevHP << "HP REPARIED." << std::endl;
 	if ( hp == maxHP )
 		std::cout << name << " HP IS FULLY CHARGED " << std::endl;
+}
+void ClapTrap::toString( void ) {
+	std::cout << std::endl
+			  << "name : " << name << std::endl
+			  << "hp : " << hp << std::endl
+			  << "ep : " << ep << std::endl
+			  << "ad : " << ad << std::endl
+			  << std::endl;
 }

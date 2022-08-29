@@ -38,10 +38,5 @@ class ClapTrap {
 	void takeDamage( unsigned int amount );
 	void beRepaired( unsigned int amount );
 
-	void toString( void ) {
-		std::cout << name << std::endl
-				  << hp << std::endl
-				  << ep << std::endl
-				  << ad << std::endl;
-	}
+	void toString( void );
 };
