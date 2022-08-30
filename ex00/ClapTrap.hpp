@@ -17,8 +17,6 @@ class ClapTrap {
 	ClapTrap( void );
 	ClapTrap( std::string name );
 	ClapTrap( const ClapTrap& ref );
-	ClapTrap( std::string name, unsigned int hp, unsigned int ep,
-			  unsigned int ad );
 	~ClapTrap( void );
 	ClapTrap& operator=( const ClapTrap& ref );
 

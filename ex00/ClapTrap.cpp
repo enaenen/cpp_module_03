@@ -8,12 +8,6 @@ ClapTrap::ClapTrap( std::string name )
 	: name( name ), hp( defaultHP ), ep( defaultEP ), ad( defaultAD ) {
 	std::cout << "====== Called ClapTrap(name) Constructor======" << std::endl;
 }
-ClapTrap::ClapTrap( std::string name, unsigned int hp, unsigned int ep,
-					unsigned int ad )
-	: name( name ), hp( hp ), ep( ep ), ad( ad ) {
-	std::cout << "====== Called ClapTrap(name, hp, ep ,ad) Constructor======"
-			  << std::endl;
-}
 
 ClapTrap::ClapTrap( const ClapTrap& ref ) {
 	std::cout << "====== Called ClapTrap(ClapTrap& ref) Constructor======"
