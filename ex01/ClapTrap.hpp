@@ -32,7 +32,7 @@ class ClapTrap {
 	void setAttackDamage( unsigned int ad );
 	void setMaxHP( unsigned int maxHP );
 
-	void attack( const std::string& target );
+	virtual void attack( const std::string& target );
 	void takeDamage( unsigned int amount );
 	void beRepaired( unsigned int amount );
 
