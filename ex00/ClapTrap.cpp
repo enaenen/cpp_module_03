@@ -2,24 +2,24 @@
 
 ClapTrap::ClapTrap( void )
 	: name( "NoName" ), hp( defaultHP ), ep( defaultEP ), ad( defaultAD ) {
-	std::cout << "====== Called ClapTrap() Constructor======" << std::endl;
+	std::cout << "*** Called ClapTrap() Constructor ***" << std::endl;
 }
 ClapTrap::ClapTrap( std::string name )
 	: name( name ), hp( defaultHP ), ep( defaultEP ), ad( defaultAD ) {
-	std::cout << "====== Called ClapTrap(name) Constructor======" << std::endl;
+	std::cout << "*** Called ClapTrap(name) Constructor ***" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap& ref ) {
-	std::cout << "====== Called ClapTrap(ClapTrap& ref) Constructor======"
+	std::cout << "*** Called ClapTrap(ClapTrap& ref) Constructor ***"
 			  << std::endl;
 	*this = ref;
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "====== Called ~ClapTrap() Destructor ======" << std::endl;
+	std::cout << "*** Called ~ClapTrap() Destructor ***" << std::endl;
 }
 ClapTrap& ClapTrap::operator=( const ClapTrap& ref ) {
-	std::cout << "====== Called Operator=() ======" << std::endl;
+	std::cout << "*** Called Operator=() ***" << std::endl;
 
 	if ( this != &ref ) {
 		name = ref.getName();
@@ -42,12 +42,16 @@ void ClapTrap::setEnergyPoints( unsigned int ep ) { this->ep = ep; }
 void ClapTrap::setAttackDamage( unsigned int ad ) { this->ad = ad; }
 
 void ClapTrap::attack( const std::string& target ) {
+	if ( ep == 0 ) {
+		std::cout << name << " <<< Not enough energy! >>>" << std::endl;
+		return;
+	}
 	std::cout << "ClapTrap " << name << " attacks " << target << ", causing "
 			  << ad << " points of damage!" << std::endl;
 }
 void ClapTrap::takeDamage( unsigned int amount ) {
 	if ( hp == 0 ) {
-		std::cout << name << "is already Destroyed." << std::endl;
+		std::cout << name << " <<< ALREADY DESTROYED >>>" << std::endl;
 		return;
 	}
 	unsigned int prevHP = hp;
@@ -57,7 +61,7 @@ void ClapTrap::takeDamage( unsigned int amount ) {
 		hp -= amount;
 	std::cout << name << " takes " << prevHP - hp << " damage." << std::endl;
 	if ( hp == 0 )
-		std::cout << name << "is DESTROYED." << std::endl;
+		std::cout << name << " <<< TOTALLY WRACKED >>>" << std::endl;
 }
 
 void ClapTrap::beRepaired( unsigned int amount ) {
@@ -67,11 +71,11 @@ void ClapTrap::beRepaired( unsigned int amount ) {
 		return;
 	}
 	if ( hp == 0 ) {
-		std::cout << name << " HP IS 0  *UNRECOVERBLE* " << std::endl;
+		std::cout << name << " HP IS 0  <<< UNRECOVERBLE >>> " << std::endl;
 		return;
 	}
 	if ( hp == maxHP ) {
-		std::cout << name << " : HP is Already FULL" << std::endl;
+		std::cout << name << " : <<< HP is Already FULL >>>" << std::endl;
 		return;
 	}
 	unsigned int prevHP = hp;
