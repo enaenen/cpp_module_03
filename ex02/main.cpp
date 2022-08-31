@@ -1,15 +1,14 @@
-#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
 int main( void ) {
 	std::cout << "==================== Constructor START ===================="
 			  << std::endl;
 
-	ScavTrap sc1( "SCAV ONE" );
-	ScavTrap sc2( "BBBB" );
+	FragTrap ft1( "SCAV ONE" );
+	FragTrap ft2( "BBBB" );
 
-	ScavTrap sc3( "C" );
-	ScavTrap sc4;
+	FragTrap ft3( "C" );
+	FragTrap ft4;
 	ClapTrap *ptr;
 
 	std::cout << "==================== Constructor END ===================="
@@ -18,18 +17,18 @@ int main( void ) {
 	;
 	std::cout << "==================== CopyAssignment TEST ===================="
 			  << std::endl;
-	sc4 = sc3;
+	ft4 = ft3;
 	std::cout << std::endl;
 
-	ptr = &sc1;
-	ptr->attack( "sc2" );
+	ptr = &ft1;
+	ptr->attack( "BBBB" );
 
-	sc2.toString();
-	sc1.attack( "sc2" );
-	sc2.takeDamage( sc1.getAttackDamage() );
-	sc2.guardGate();
+	ft2.toString();
+	ft1.attack( "BBBB" );
+	ft2.takeDamage( ft1.getAttackDamage() );
+	ft2.highFiveGuys();
 
-	sc2.toString();
+	ft2.toString();
 	std::cout << "==================== Destructor Call ===================="
 			  << std::endl;
 }
