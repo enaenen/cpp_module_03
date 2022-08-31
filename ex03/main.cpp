@@ -1,4 +1,4 @@
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main( void ) {
 	std::cout << "==================== Constructor START ===================="
@@ -9,7 +9,7 @@ int main( void ) {
 
 	FragTrap ft3( "C" );
 	FragTrap ft4;
-	ClapTrap *ptr;
+	// ClapTrap *ptr;
 
 	std::cout << "==================== Constructor END ===================="
 			  << std::endl
@@ -20,8 +20,8 @@ int main( void ) {
 	ft4 = ft3;
 	std::cout << std::endl;
 
-	ptr = &ft1;
-	ptr->attack( "BBBB" );
+	// ptr = &ft1;
+	// ptr->attack( "BBBB" );
 
 	ft2.toString();
 	ft1.attack( "BBBB" );

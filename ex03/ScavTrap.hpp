@@ -3,7 +3,7 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : public virtual ClapTrap {
    protected:
 	static const int scavHP = 100;
 	static const int scavEP = 50;

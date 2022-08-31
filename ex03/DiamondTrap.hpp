@@ -1,13 +1,12 @@
 #pragma once
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
 class DiamondTrap : public virtual ClapTrap, ScavTrap, FragTrap {
    private:
 	std::string name;
-	/* data */
+
    public:
 	DiamondTrap( void );
 	DiamondTrap( std::string name );
