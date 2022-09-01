@@ -26,9 +26,18 @@ int main( void ) {
 	d4 = d3;
 	std::cout << std::endl;
 
-	std::cout << "====================  ====================" << std::endl;
+	std::cout << "==================== DiamondClap In ScavTrap Pointer ====================" << std::endl;
 	ptr = &d1;
 	ptr->attack( "BBBB" );
+	
+	std::cout << "==================== attack ====================" << std::endl;
+	d2.toString();
+	d1.attack("BBBB");
+	d2.takeDamage(d1.getAttackDamage());
+	std::cout << "==================== whoami ====================" << std::endl;
+	d1.whoami();
+	std::cout << "==================== printRealtionName ====================" << std::endl;
+	d1.printRelationName();
 
 	d1.toString();
 	d1.attack( "BBBB" );

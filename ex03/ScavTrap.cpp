@@ -45,7 +45,7 @@ void ScavTrap::attack( const std::string &target ) {
 		std::cout << getName() << " <<< Not enough energy! >>>" << std::endl;
 		return;
 	}
-	std::cout << "ScavTrap " << getName() << " attacks " << target << ", causing "
+	std::cout << "[ ScavTrap ] " << getName() << " attacks " << target << ", causing "
 			  << ad << " points of damage!" << std::endl;
 	ep--;
 }

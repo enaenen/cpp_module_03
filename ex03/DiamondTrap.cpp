@@ -36,6 +36,7 @@ DiamondTrap::DiamondTrap( const DiamondTrap& ref )
 	*this = ref;
 }
 DiamondTrap::~DiamondTrap( void ) {
+	std::cout << name << " [ DiamondTrap ] ~DiamondTrap() Called Destructor " << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator=( const DiamondTrap& ref ) {
