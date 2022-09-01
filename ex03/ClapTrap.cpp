@@ -56,17 +56,17 @@ void ClapTrap::setAttackDamage( unsigned int ad ) { this->ad = ad; }
 
 void ClapTrap::attack( const std::string& target ) {
 	if ( ep == 0 ) {
-		std::cout << name << " <<< Not enough energy! >>>" << std::endl;
+		std::cout << getName() << " <<< Not enough energy! >>>" << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << name << " attacks " << target << ", causing "
+	std::cout << "ClapTrap " << getName() << " attacks " << target << ", causing "
 			  << ad << " points of damage!" << std::endl;
 	ep--;
 }
 
 void ClapTrap::takeDamage( unsigned int amount ) {
 	if ( hp == 0 ) {
-		std::cout << name << " <<< ALREADY DESTROYED >>>" << std::endl;
+		std::cout << getName() << " <<< ALREADY DESTROYED >>>" << std::endl;
 		return;
 	}
 	unsigned int prevHP = hp;
@@ -74,23 +74,23 @@ void ClapTrap::takeDamage( unsigned int amount ) {
 		hp = 0;
 	else
 		hp -= amount;
-	std::cout << name << " takes " << prevHP - hp << " damage." << std::endl;
+	std::cout << getName() << " takes " << prevHP - hp << " damage." << std::endl;
 	if ( hp == 0 )
-		std::cout << name << " <<< TOTALLY WRACKED >>>" << std::endl;
+		std::cout << getName() << " <<< TOTALLY WRACKED >>>" << std::endl;
 }
 
 void ClapTrap::beRepaired( unsigned int amount ) {
 	if ( ep == 0 ) {
-		std::cout << name << " : "
+		std::cout << getName() << " : "
 				  << " Has No EnergyPoints " << std::endl;
 		return;
 	}
 	if ( hp == 0 ) {
-		std::cout << name << " HP IS 0  <<< UNRECOVERBLE >>> " << std::endl;
+		std::cout << getName() << " HP IS 0  <<< UNRECOVERBLE >>> " << std::endl;
 		return;
 	}
 	if ( hp == maxHP ) {
-		std::cout << name << " : <<< HP is Already FULL >>>" << std::endl;
+		std::cout << getName() << " : <<< HP is Already FULL >>>" << std::endl;
 		return;
 	}
 	unsigned int prevHP = hp;
@@ -99,13 +99,13 @@ void ClapTrap::beRepaired( unsigned int amount ) {
 		hp = maxHP;
 	else
 		hp += amount;
-	std::cout << name << " : " << hp - prevHP << "HP REPARIED." << std::endl;
+	std::cout << getName() << " : " << hp - prevHP << "HP REPARIED." << std::endl;
 	if ( hp == maxHP )
-		std::cout << name << " HP IS FULLY CHARGED " << std::endl;
+		std::cout << getName() << " HP IS FULLY CHARGED " << std::endl;
 }
 void ClapTrap::toString( void ) {
 	std::cout << std::endl
-			  << "name : " << name << std::endl
+			  << "name : " << getName() << std::endl
 			  << "hp : " << hp << std::endl
 			  << "ep : " << ep << std::endl
 			  << "ad : " << ad << std::endl

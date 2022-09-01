@@ -1,7 +1,7 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap( void ) : ClapTrap() {
-	std::cout << name << " [ ScavTrap ] Default Constructor " << std::endl;
+	std::cout << getName() << " [ ScavTrap ] Default Constructor " << std::endl;
 	hp = scavHP;
 	ep = scavEP;
 	ad = scavAD;
@@ -9,7 +9,7 @@ ScavTrap::ScavTrap( void ) : ClapTrap() {
 }
 
 ScavTrap::ScavTrap( std::string name ) : ClapTrap( name ) {
-	std::cout << name << " [ ScavTrap ] ScavTrap(name) Constructor Called "
+	std::cout << getName() << " [ ScavTrap ] ScavTrap(name) Constructor Called "
 			  << std::endl;
 	hp = scavHP;
 	ep = scavEP;
@@ -37,19 +37,19 @@ ScavTrap &ScavTrap::operator=( const ScavTrap &ref ) {
 }
 
 ScavTrap::~ScavTrap( void ) {
-	std::cout << name << " [ ScavTrap ] Destructor Called." << std::endl;
+	std::cout << getName() << " [ ScavTrap ] Destructor Called." << std::endl;
 }
 
 void ScavTrap::attack( const std::string &target ) {
 	if ( ep == 0 ) {
-		std::cout << name << " <<< Not enough energy! >>>" << std::endl;
+		std::cout << getName() << " <<< Not enough energy! >>>" << std::endl;
 		return;
 	}
-	std::cout << "ScavTrap " << name << " attacks " << target << ", causing "
+	std::cout << "ScavTrap " << getName() << " attacks " << target << ", causing "
 			  << ad << " points of damage!" << std::endl;
 	ep--;
 }
 
 void ScavTrap::guardGate( void ) {
-	std::cout << name << " ScavTrap is now Gate keeper mode." << std::endl;
+	std::cout << getName() << " ScavTrap is now Gate keeper mode." << std::endl;
 }

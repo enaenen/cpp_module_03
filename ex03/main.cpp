@@ -4,12 +4,18 @@ int main( void ) {
 	std::cout << "==================== Constructor START ===================="
 			  << std::endl;
 
-	FragTrap ft1( "SCAV ONE" );
-	FragTrap ft2( "BBBB" );
+	DiamondTrap d1( "AAA" );
 
-	FragTrap ft3( "C" );
-	FragTrap ft4;
-	// ClapTrap *ptr;
+	std::cout << std::endl;
+	DiamondTrap d2( "BBBB" );
+	std::cout << std::endl;
+
+	DiamondTrap d3( "C" );
+	std::cout << std::endl;
+
+	DiamondTrap d4;
+	std::cout << std::endl;
+	ClapTrap *ptr;
 
 	std::cout << "==================== Constructor END ===================="
 			  << std::endl
@@ -17,18 +23,19 @@ int main( void ) {
 	;
 	std::cout << "==================== CopyAssignment TEST ===================="
 			  << std::endl;
-	ft4 = ft3;
+	d4 = d3;
 	std::cout << std::endl;
 
-	// ptr = &ft1;
-	// ptr->attack( "BBBB" );
+	std::cout << "====================  ====================" << std::endl;
+	ptr = &d1;
+	ptr->attack( "BBBB" );
 
-	ft2.toString();
-	ft1.attack( "BBBB" );
-	ft2.takeDamage( ft1.getAttackDamage() );
-	ft2.highFiveGuys();
+	d1.toString();
+	d1.attack( "BBBB" );
+	d2.takeDamage( d1.getAttackDamage() );
+	d2.highFiveGuys();
 
-	ft2.toString();
+	d2.toString();
 	std::cout << "==================== Destructor Call ===================="
 			  << std::endl;
 }

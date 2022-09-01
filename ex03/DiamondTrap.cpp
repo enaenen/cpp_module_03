@@ -2,8 +2,8 @@
 
 DiamondTrap::DiamondTrap( void )
 	: ClapTrap( "Noname_clap_name" ),
-	  ScavTrap( "Noname_clap_name" ),
 	  FragTrap( "Noname_clap_name" ),
+	  ScavTrap( "Noname_clap_name" ),
 	  name( "Noname" ) {
 	std::cout << name << " [ DiamondTrap ] Default Constructor Called"
 			  << std::endl;
@@ -14,8 +14,8 @@ DiamondTrap::DiamondTrap( void )
 }
 DiamondTrap::DiamondTrap( std::string name )
 	: ClapTrap( name + "_clap_name" ),
-	  ScavTrap( name + "_clap_name" ),
 	  FragTrap( name + "_clap_name" ),
+	  ScavTrap( name + "_clap_name" ),
 	  name( name ) {
 	std::cout << name
 			  << " [ DiamondTrap ] DiamonTrap( name ) Constructor Called"
@@ -27,8 +27,8 @@ DiamondTrap::DiamondTrap( std::string name )
 }
 DiamondTrap::DiamondTrap( const DiamondTrap& ref )
 	: ClapTrap( ref.ClapTrap::getName() ),
-	  ScavTrap( ref.ClapTrap::getName() ),
 	  FragTrap( ref.ClapTrap::getName() ) {
+	  ScavTrap( ref.ClapTrap::getName() ),
 	std::cout << name
 			  << " [ DiamondTrap ] DiamonTrap( DiamondTrap &ref ) "
 				 "Constructor Called"

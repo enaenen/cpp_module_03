@@ -1,7 +1,7 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap( void ) : ClapTrap() {
-	std::cout << name << " [ FragTrap ] Default Constructor " << std::endl;
+	std::cout << getName() << " [ FragTrap ] Default Constructor " << std::endl;
 	hp = fragHP;
 	ep = fragEP;
 	ad = fragAD;
@@ -9,7 +9,7 @@ FragTrap::FragTrap( void ) : ClapTrap() {
 }
 
 FragTrap::FragTrap( std::string name ) : ClapTrap( name ) {
-	std::cout << name << " [ FragTrap ] FragTrap(name) Constructor Called "
+	std::cout << getName() << " [ FragTrap ] FragTrap(name) Constructor Called "
 			  << std::endl;
 	hp = fragHP;
 	ep = fragEP;
@@ -37,12 +37,12 @@ FragTrap &FragTrap::operator=( const FragTrap &ref ) {
 }
 
 FragTrap::~FragTrap( void ) {
-	std::cout << name << " [ FragTrap ] Destructor Called." << std::endl;
+	std::cout << getName() << " [ FragTrap ] Destructor Called." << std::endl;
 }
 
 void FragTrap::attack( const std::string &target ) {
 	if ( ep == 0 ) {
-		std::cout << name << " <<< Not enough energy! >>>" << std::endl;
+		std::cout << getName() << " <<< Not enough energy! >>>" << std::endl;
 		return;
 	}
 	std::cout << "FragTrap " << name << " attacks " << target << ", causing "
@@ -51,5 +51,5 @@ void FragTrap::attack( const std::string &target ) {
 }
 
 void FragTrap::highFiveGuys( void ) {
-	std::cout << name << " *** FragTrap HIGH FIVE !!! *** " << std::endl;
+	std::cout << getName() << " *** FragTrap HIGH FIVE !!! *** " << std::endl;
 }
